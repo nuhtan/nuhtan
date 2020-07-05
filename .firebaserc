@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nuhtaniel": {
+      "hosting": {
+        "nuhtan": [
+          "nuhtaniel"
+        ]
+      }
+    }
+  }
+}
