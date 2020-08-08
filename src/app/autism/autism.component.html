@@ -1,0 +1,20 @@
+<mat-tab-group mat-align-tabs="center" (selectedTabChange)=tabChange($event)>
+    <mat-tab label="Ranking"></mat-tab>
+    <mat-tab label="Similarity">
+        <div class="grid-container">
+            <mat-toolbar>
+                <span style="flex: 1 1 auto"></span>
+                <mat-form-field>
+                    <mat-label>Select Person</mat-label>
+                    <mat-select [(value)]="selectedPerson" (selectionChange)="selectChange($event)">
+                        <mat-option *ngFor="let person of people" value="{{person.name}}">{{person.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span style="flex: 1 1 auto"></span>
+            </mat-toolbar>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+<div>
+    <canvas id="canvas" width="25px" height="10px">{{ chart }}</canvas>
+</div>

@@ -1,0 +1,88 @@
+<div class="grid-container">
+    <mat-card>
+        <mat-grid-list cols="6" rowHeight="100px">
+            <mat-grid-tile [colspan]="4" [rowspan]="3">
+                <mat-card>
+                    <mat-card-content>
+                        <!-- Grid list is used only for centering -->
+                        <mat-grid-list cols="2" rowHeight="50px" style="margin: 5px;">
+                            <mat-grid-tile [colspan]="2" [rowspan]="1">
+                                <mat-button-toggle-group (change)="eventTypeChange($event)">
+                                    <mat-button-toggle value=0 [checked]="true">
+                                        Single Event
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value=1>
+                                        Repeating Event
+                                    </mat-button-toggle>
+                                    <mat-button-toggle value=2>
+                                        Class
+                                    </mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </mat-grid-tile>
+                        </mat-grid-list>
+
+                        <mat-form-field style="margin-right: 10px">
+                            <mat-label>Name of Event</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <!-- Detect mobile and switch to mobile gui -->
+                        <mat-form-field>
+                            <mat-label>Initial Date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+
+                        <br>
+
+                        <!-- Create a custom color scheme for both dark and light themes -->
+                        <mat-form-field style="margin-right: 10px">
+                            <input matInput placeholder="Starting Time" [ngxTimepicker]="startTime" readonly>
+                            <ngx-material-timepicker #startTime></ngx-material-timepicker>
+                        </mat-form-field>
+
+                        <mat-form-field style="width: 51%;">
+                            <input matInput placeholder="Ending Time" [ngxTimepicker]="endTime" readonly>
+                            <ngx-material-timepicker #endTime></ngx-material-timepicker>
+                        </mat-form-field>
+
+                        <br>
+
+                        <mat-checkbox [(ngModel)]="inPerson" color="primary">
+                            In Person Activity?
+                        </mat-checkbox>
+                    </mat-card-content>
+                    <mat-card-actions align="end">
+                        <button mat-button (click)="clearEvent()">
+                            Clear
+                        </button>
+                        <span style="flex: 1 1 auto;"></span>
+                        <button mat-button (click)="addEvent()">
+                            Add
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="2" [rowspan]="2">
+                <mat-card>
+                    <mat-card-title>
+                        <h2 mat-h2>Current Schedule:</h2>
+                    </mat-card-title>
+                    <mat-card-content>
+                        This area will display the current schedule
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="clearSchedule()">
+                            Clear
+                        </button>
+                        <span style="flex: 1 1 auto;"></span>
+                        <button mat-button (click)="saveSchedule()">
+                            Save
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card>
+</div>

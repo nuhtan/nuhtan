@@ -1,1 +1,62 @@
-<p>home works!</p>
+<div class="grid-container">
+    <div>
+        <mat-grid-list cols="4" rowHeight="200px">
+            <mat-grid-tile [colspan]=tileCols [rowspan]=1 *ngIf="afAuth.user | async as user">
+                <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <button color="primary" mat-raised-button routerLink="schedules">
+                                Schedules
+                            </button>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="dashboard-card-content">
+                        Temp Text
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=tileCols [rowspan]=1>
+                <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <button color="primary" mat-raised-button routerLink="autism">
+                                Autism
+                            </button>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="dashboard-card-content">
+                        Temp Text
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=tileCols [rowspan]=1>
+                <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <button color="primary" mat-raised-button routerLink="politics">
+                                Politics
+                            </button>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="dashboard-card-content">
+                        Temp Text
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]=tileCols [rowspan]=1>
+                <mat-card class="dashboard-card">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <button color="primary" mat-raised-button routerLink="plans">
+                                Plans for this website
+                            </button>
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="dashboard-card-content">
+                        Temp Text
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+</div>
